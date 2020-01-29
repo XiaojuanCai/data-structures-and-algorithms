@@ -5,21 +5,23 @@ CHALLENGE 1
 
 Write a function named greeting that takes in a string and returns the string in all uppercase letters.
 
-Then, write a function named speaker that takes in a string and a callback function. The speaker function should return the string in all uppercase letters only by invoking the callback.
+Then, write a function named speaker that takes in a string and a callback function. 
+The speaker function should return the string in all uppercase letters only by invoking the callback.
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
-  // Solution code here...
+  return word.toUpperCase();
 };
 
 const speaker = (message, callback) => {
-  // Solution code here...
+  return callback(message);
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named addValues that takes in an array and a value and pushes the value into the array. This function does not need a return statement.
+Write a function named addValues that takes in an array and a value and pushes the value into the array. 
+This function does not need a return statement.
 
 Then, write a function named addNumbers that takes in four arguments:
   - A number to be added to an array
@@ -33,11 +35,15 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+  var i;
+  for (i = 0; i < times; i++){
+      callback(arr, num);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -53,12 +59,23 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const removeOne = (num, arr) => {
-  // Solution code here...
+  if (num % 3 === 2){
+      arr.pop();
+  }
 };
 
+
+
 const removeElements = (arr, callback) => {
-  // Solution code here...
+  var i;
+  for (i = 0; i < arr.length; i++){
+      callback(arr[i], arr);
+  }
+  return arr;
 };
+
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -67,9 +84,13 @@ Write a function named removeWithForEach that produces the same output as challe
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithForEach = (arr, callback) => {
-  // Solution code here...
+  arr.forEach((value,i)=> callback(value,arr));
+  return arr;
 };
 
+
+// var arr = [1,2,3,4,5,6,7,8,9,10];
+// console.log(removeWithForEach(arr,removeOne));
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -81,8 +102,15 @@ This anonymous function should accept up to three arguments: the element, the in
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithAnon = (arr) => {
-  // Solution code here...
+    arr.forEach((value, i)=> {
+        if (value % 3 === 2){
+            arr.pop();
+        }
+    });
+    return arr;
 };
+// var arr = [1,2,3,4,5,6,7,8];
+// console.log(removeWithAnon(arr));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -102,9 +130,25 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+  var list = [];
+
+  availableItems.forEach((value,i)=> {
+      if (value.available){
+          list.push(value.name);
+      }
+  });
+  return list;
 };
 
+// var inventory = [
+//     { name: 'apples', available: true },
+//     { name: 'pears', available: true },
+//     { name: 'oranges', available: false },
+//     { name: 'bananas', available: true },
+//     { name: 'blueberries', available: false }
+//   ];
+
+//   console.log(createList(inventory));
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
 
@@ -120,8 +164,18 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  var outputArray = [];
+  arr.forEach((value,i) => {
+      if ((value % 3 === 0) && (value % 5 === 0)) outputArray.push('Fizz Buzz');
+      else if (value % 3 === 0) outputArray.push('Fizz');
+      else if (value % 5 === 0) outputArray.push('Buzz');
+      else outputArray.push(value);
+  })
+  return outputArray;
 };
+
+// var arr = [1,2,3,4,5,6,7,8,9,10, 15];
+// console.log(fizzbuzz(arr));
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
