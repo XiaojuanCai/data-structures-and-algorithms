@@ -1,10 +1,10 @@
-#Links to REPLs of Katas
+# Links to REPLs of Katas
 
-Promise: https://repl.it/repls/BothGoodnaturedDisk
+* Promise: https://repl.it/repls/BothGoodnaturedDisk
 
-ArrowFunction:https://repl.it/repls/StingySerpentineBucket
+* ArrowFunction: https://repl.it/repls/StingySerpentineBucket
 
-Object: https://repl.it/repls/MadShadyConfig
+* Object: https://repl.it/repls/MadShadyConfig
 
-Literals: https://repl.it/repls/SeparateCrowdedDebugmonitor
+* Literals: https://repl.it/repls/SeparateCrowdedDebugmonitor
 
