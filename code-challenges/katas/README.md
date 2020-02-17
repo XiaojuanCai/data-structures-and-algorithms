@@ -8,3 +8,9 @@
 
 * Literals: https://repl.it/repls/SeparateCrowdedDebugmonitor
 
+* Callback: https://repl.it/repls/CloseImportantDictionary
+
+* Async/Await: https://repl.it/repls/PositiveFirstDeadcode
+
+
+
